@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WiFi-Controlled AC Switcher</title>
+<script>
+var xmlHttp=null;function toggleSwitch(pin){var url="/switch.lc?pin="+pin;xmlHttp=new XMLHttpRequest();xmlHttp.onreadystatechange=processRequest;xmlHttp.open("GET",url,true);xmlHttp.send(null);}function processRequest(){if(xmlHttp.readyState==0)document.getElementById("label").innerHTML='Sending request...';else if(xmlHttp.readyState==4)if(xmlHttp.status==200)document.getElementById("label").innerHTML='Success';else if(xmlHttp.status==400)document.getElementById("label").innerHTML='Bad request.';}
+</script>
+</head>
+<body style="text-align:center">
+<h2>WiFi-Controlled AC Switcher</h2>
+<p>Your device is ready.</p>
+<br>
+<h4>Press the switch:</h4>
+<input type="button" value="ON / OFF" onclick="toggleSwitch(0);" />
+<div id="label"></div>
+<br>
+<br>
+<br>
+<div style="font-size:75%">
+<p>Copyright (c) 2016<br>Rom Gapuz</p>
+<p>Powered by NodeMCU on ESP8266</p>
+</div>
+</body>
+</html>

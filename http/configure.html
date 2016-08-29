@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WiFi-Controlled AC Switcher</title>
+<script>
+function checkPwd(){var ssid_password=document.forms[0].ssid_password.value;if(ssid_password.length<=20&&ssid_password.length>=8)return true;else{alert("Password should be 8-20 characters long");return false;}}
+</script>
+</head>
+<body style="text-align:center">
+<h2>WiFi-Controlled AC Switcher</h2>
+<p>Your device is not yet configured.</p>
+<br>
+<form action="/configure.lc" method="get" onsubmit="return checkPwd()">
+<h4>Connect device to your access point (AP):</h4>
+<p>SSID: <input type="text" name="ssid"></p>
+<p>Password: <input type="password" name="ssid_password"></p>
+<br>
+<input type="submit" value="Configure">
+<br>
+<br>
+<br>
+</form>
+<div style="font-size:75%">
+<p>Copyright (c) 2016<br>Rom Gapuz</p>
+<p>Powered by NodeMCU on ESP8266</p>
+</div>
+</body>
+</html>
